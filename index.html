@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+    * {margin: 0; padding: 0;}
+
+    .face_box {width: 130px; border: 1px solid #000; margin: 40px auto 0 auto; }
+
+        .face {width: 130px; height: 130px; border: 1px solid red; border-radius: 50%; overflow: hidden;}
+                                                                     /* borr50% -정사각형일때 원 만들기 공식 */
+        .name {margin: 14px 0 0 0; font-size: 24px; text-align: center; border: 1px solid #000;}
+                                    /* 폰트사이즈 fz24 */
+
+        .job {font-size: 15px; text-align: center;}
+
+    .butten_box {width: 230px; height: 230px; margin: 34px auto 0 auto; border: 1px solid #000; text-align: center;}
+                                                                                                  /* 아래 버튼박스 에이 태그가 인라인 블럭(텍스트 취급)되어서 쓸 수 있음. */
+
+        .butten_box a {border: 1px solid #000; padding: 8px 60px; display: inline-block; margin-bottom: 25px; border-radius: 20px;}
+                                                                    /* dib탭 - 인라인 블럭: 기본크기 없고 크기와 마진 위아래만 줄 수 있음. */
+    
+        /* .butten_box a {border: 1px solid #000; display: block; text-align: center; width: 190px; height: 38px; line-height: 38px; margin: 0 auto 25px auto; border-radius: 20px;}
+
+        /* butten_box 태그의 a태그만 스타일 적용하기. 이렇게 안하면 모든 a태그가 다 스타일 적용됌. */
+        /* a태그는 withd와 height 안 됌. 그래서 블록 태그(db탭)로 만들면 다 됌.  */
+
+    .map_box {width: 300px; height: 400px; margin: 64px auto 0 auto; border: 1px solid #000;}
+
+        .map_box .title {font-size: 24px; text-align: center; }
+
+        .map_box .box {width: 300px; height: 350px; border: 1px solid #000; margin-top: 20px;}
+
+
+</style>
+
+</head>
+<body>
+
+<div class="face_box">
+
+    <div class="face">
+        <img src="이미지/p.jpg" alt="">
+        <!-- 컨트롤+스페이스  에서 이미지 찾기 -->
+    </div>
+        <!-- .face+.name+.job>ff 탭 -->
+    <div class="name"><a href="#">이세린</a></div>
+
+    <div class="job">웹디자이너</div>
+
+</div>
+
+<div class="butten_box">
+    <a href="#">전화 문의
+        <!-- #은 임시링크 -->
+    </a>
+    <a href="#">문자 문의</a>
+    <a href="#">카카오톡 문의</a>
+    <a href="#">이메일 문의</a>
+
+</div>
+
+<div class="map_box">
+
+    <div class="title">오시는 길</div>
+    <div class="box">
+            <!-- * 카카오맵 - 지도퍼가기 -->
+            <!-- 1. 지도 노드 -->
+            <div id="daumRoughmapContainer1735030316000" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+            <!--
+                2. 설치 스크립트
+                * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+            -->
+            <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+            <!-- 3. 실행 스크립트 -->
+            <script charset="UTF-8">
+                new daum.roughmap.Lander({
+                    "timestamp" : "1735030316000",
+                    "key" : "2mmdz",
+                    "mapWidth" : "300",
+                    "mapHeight" : "350"
+                }).render();
+            </script>
+    </div>
+
+</div>
+
+<div class="docbar"></div>
+
+
+    
+</body>
+</html>
